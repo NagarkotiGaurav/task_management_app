@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 
 const TaskForm = ({ onSubmit, taskToEdit, onCancelEdit }) => {
   const [formData, setFormData] = useState({
@@ -12,7 +13,19 @@ const TaskForm = ({ onSubmit, taskToEdit, onCancelEdit }) => {
   });
 
   const [subtaskInput, setSubtaskInput] = useState('');
-  const [subtaskCounter, setSubtaskCounter] = useState(1); // for unique local IDs
+  const [subtaskCounter, setSubtaskCounter] = useState(1);
+
+  const logActivity = async (action, taskTitle) => {
+    try {
+      await axios.post('http://localhost:3001/logs', {
+        action,
+        taskTitle,
+        timestamp: new Date().toISOString()
+      });
+    } catch (error) {
+      console.error('Log activity failed:', error);
+    }
+  };
 
   useEffect(() => {
     if (taskToEdit) {
@@ -37,21 +50,27 @@ const TaskForm = ({ onSubmit, taskToEdit, onCancelEdit }) => {
         ...prev,
         subtasks: [...prev.subtasks, newSubtask],
       }));
+      logActivity('added subtask', newSubtask.title);
       setSubtaskInput('');
       setSubtaskCounter((prev) => prev + 1);
     }
   };
 
   const handleSubtaskDelete = (id) => {
+    const deletedSub = formData.subtasks.find(sub => sub.id === id);
     setFormData((prev) => ({
       ...prev,
       subtasks: prev.subtasks.filter((sub) => sub.id !== id),
     }));
+    if (deletedSub) logActivity('deleted subtask', deletedSub.title);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    const action = taskToEdit ? 'updated task' : 'created task';
+    logActivity(action, formData.title);
     onSubmit(formData);
+
     setFormData({
       title: '',
       description: '',
@@ -138,7 +157,7 @@ const TaskForm = ({ onSubmit, taskToEdit, onCancelEdit }) => {
           </button>
         </div>
         <ul className="space-y-1">
-          {formData.subtasks && formData.subtasks.map((sub) => (
+          {formData.subtasks?.map((sub) => (
             <li key={sub.id} className="flex justify-between items-center bg-gray-100 p-2 rounded">
               <span>{sub.title}</span>
               <button

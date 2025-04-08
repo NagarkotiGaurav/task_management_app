@@ -1,0 +1,206 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "Admin",
+      "email": "admin@test.com",
+      "password": "admin",
+      "role": "admin"
+    },
+    {
+      "id": "2",
+      "name": "User",
+      "email": "user@test.com",
+      "password": "user",
+      "role": "member"
+    },
+    {
+      "id": "5ffb",
+      "name": "Gaurav singh",
+      "email": "g@test.com",
+      "password": "123",
+      "role": "member"
+    },
+    {
+      "id": "2134",
+      "name": "amisha",
+      "email": "a@gmail",
+      "password": "12",
+      "role": "member"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "0864",
+      "title": "API Integration ",
+      "description": "Integrate api calls ",
+      "assignee": "gaurav",
+      "priority": "Low",
+      "deadline": "2025-04-08",
+      "status": "Pending"
+    },
+    {
+      "id": "452a",
+      "title": "design frontend for edutech",
+      "description": "basic web ui for display",
+      "assignee": "gaurav",
+      "priority": "Medium",
+      "deadline": "2025-04-10",
+      "status": "Completed",
+      "subtasks": [
+        {
+          "id": "sub-1744037542575-1",
+          "title": "dd",
+          "done": false
+        },
+        {
+          "id": "sub-1744037547808-2",
+          "title": "hhh",
+          "done": false
+        }
+      ]
+    },
+    {
+      "id": "1",
+      "title": "Build Login Page",
+      "status": "In Progress",
+      "assignee": "Alice",
+      "subtasks": [
+        {
+          "id": 101,
+          "title": "Design UI",
+          "done": true
+        },
+        {
+          "id": 102,
+          "title": "Implement Form Validation",
+          "done": false
+        },
+        {
+          "id": 103,
+          "title": "API Integration",
+          "done": false
+        }
+      ],
+      "deadline": "2025-04-20"
+    },
+    {
+      "id": "2",
+      "title": "Create Dashboard",
+      "status": "Pending",
+      "assignee": "Bob",
+      "subtasks": [
+        {
+          "id": 201,
+          "title": "Set up charts",
+          "done": false
+        },
+        {
+          "id": 202,
+          "title": "Add recent activity section",
+          "done": false
+        }
+      ],
+      "deadline": "2025-04-26"
+    },
+    {
+      "id": "3",
+      "title": "Testing & Bug Fixing",
+      "status": "In Progress",
+      "assignee": "Charlie",
+      "subtasks": [
+        {
+          "id": 301,
+          "title": "Unit tests for components",
+          "done": true
+        },
+        {
+          "id": 302,
+          "title": "Fix layout issues",
+          "done": false
+        }
+      ],
+      "deadline": "2025-04-11"
+    }
+  ],
+  "logs": [
+    {
+      "id": "9a1e",
+      "action": "Created Task",
+      "taskTitle": "gello",
+      "timestamp": "2025-04-07T14:05:45.956Z"
+    },
+    {
+      "id": "3544",
+      "action": "Updated Task",
+      "taskTitle": "gello",
+      "timestamp": "2025-04-07T14:05:56.931Z"
+    },
+    {
+      "id": "49d2",
+      "action": "Updated Task",
+      "taskTitle": "gelloooo",
+      "timestamp": "2025-04-07T14:06:52.326Z"
+    },
+    {
+      "id": "e7a8",
+      "action": "Created Task",
+      "taskTitle": "ddd",
+      "timestamp": "2025-04-07T14:13:16.789Z"
+    },
+    {
+      "id": "e88c",
+      "action": "Created Task",
+      "taskTitle": "API integeration",
+      "timestamp": "2025-04-07T14:40:38.874Z"
+    },
+    {
+      "id": "6e1e",
+      "action": "Updated Task",
+      "taskTitle": "API integeration",
+      "timestamp": "2025-04-07T14:40:46.300Z"
+    },
+    {
+      "id": "e020",
+      "action": "Deleted Task",
+      "taskTitle": "API integeration",
+      "timestamp": "2025-04-07T14:40:49.614Z"
+    },
+    {
+      "id": "da11",
+      "action": "Created Task",
+      "taskTitle": "API Integration ",
+      "timestamp": "2025-04-07T14:41:41.016Z"
+    },
+    {
+      "id": "fed7",
+      "action": "Created Task",
+      "taskTitle": "design frontend for edutech",
+      "timestamp": "2025-04-07T14:53:05.011Z"
+    },
+    {
+      "id": "409b",
+      "action": "Toggled Subtask",
+      "taskTitle": "design frontend for edutech",
+      "timestamp": "2025-04-07T14:53:33.454Z"
+    },
+    {
+      "id": "baff",
+      "action": "Toggled Subtask",
+      "taskTitle": "design frontend for edutech",
+      "timestamp": "2025-04-07T14:53:36.853Z"
+    },
+    {
+      "id": "0737",
+      "action": "Toggled Subtask",
+      "taskTitle": "design frontend for edutech",
+      "timestamp": "2025-04-07T14:53:47.103Z"
+    },
+    {
+      "id": "69b3",
+      "action": "Toggled Subtask",
+      "taskTitle": "design frontend for edutech",
+      "timestamp": "2025-04-07T14:53:49.000Z"
+    }
+  ]
+}
